@@ -22,7 +22,7 @@ public class TestPhoneBook {
 			case 1:
 				System.out.println("Enter name of the contact : ");
 				String name = sc.next();
-				
+				sc.nextLine();
 				
 				System.out.println("Enter Phone Number : ");
 				String phNo = sc.next();
@@ -32,6 +32,7 @@ public class TestPhoneBook {
 				
 				System.out.println("Enter Address : ");
 				String addr = sc.next();
+				sc.nextLine();
 				try {
 					PhoneBook p = new PhoneBook(name, phNo, email, addr);
 					s.add(p);
@@ -85,15 +86,26 @@ public class TestPhoneBook {
 						{
 							System.out.println("Enter the phone number to be updated");
 							String updPhNo = sc.next();
-							up.setPhoneNo(updPhNo);
-							System.out.println("Phone number Changed!!");
+							try{
+								up.setPhoneNo(updPhNo);
+								System.out.println("Phone number Changed!!");
+							}
+							catch(PhoneNoException e) {
+								System.out.println("Error : "+e.getMessage());
+							}
+							
 						}
 						else if(opt == 3)
 						{
 							System.out.println("Enter the email to be updated");
 							String updEmail = sc.next();
-							up.setEmail(updEmail);
-							System.out.println("Email Changed!!");
+							try {
+								up.setEmail(updEmail);
+								System.out.println("Email Changed!!");
+							}
+							catch(EmailException e) {
+								System.out.println("Error : "+e.getMessage());
+							}
 						}
 						else if(opt == 4)
 						{

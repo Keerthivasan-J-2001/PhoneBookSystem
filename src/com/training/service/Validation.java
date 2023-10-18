@@ -17,7 +17,7 @@ public class Validation {
 	}
 
 	public static boolean emailVal(String email) {
-		Pattern p = Pattern.compile("^[a-z]{3,}[0-9]*@[eg]mail.com$");
+		Pattern p = Pattern.compile("^[a-zA-z]{2,}[a-zA-Z0-9_.-]+@[a-z]{3,}[.com|.in]+$");
 		Matcher m = p.matcher(email);
 		boolean b = m.matches();
 		return b;

@@ -40,16 +40,22 @@ public class PhoneBook implements Comparable<PhoneBook> {
 		return phoneNo;
 	}
 
-	public void setPhoneNo(String phoneNo) {
-		this.phoneNo = phoneNo;
+	public void setPhoneNo(String phoneNo) throws  PhoneNoException{
+		if(Validation.phNoVal(phoneNo))
+			this.phoneNo = phoneNo;
+		else
+			throw new PhoneNoException("Invalid Phone number!!(PhoneNoException)");
 	}
 
 	public String getEmail() {
 		return email;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setEmail(String email) throws EmailException{
+		if(Validation.emailVal(email))
+			this.email = email;
+		else
+			throw new EmailException("Invalid Email!!(EmailException)");
 	}
 
 	public String getAddress() {
