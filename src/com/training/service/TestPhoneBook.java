@@ -20,19 +20,19 @@ public class TestPhoneBook {
 			int ch = sc.nextInt();
 			switch(ch) {
 			case 1:
-				System.out.println("Enter name of the contact : ");
-				String name = sc.next();
+				System.out.print("Enter name of the contact : ");
 				sc.nextLine();
+				String name = sc.nextLine();
 				
-				System.out.println("Enter Phone Number : ");
-				String phNo = sc.next();
+				System.out.print("Enter Phone Number : ");
+				String phNo = sc.nextLine();
 				
-				System.out.println("Enter Email Id : ");
-				String email = sc.next();
+				System.out.print("Enter Email Id : ");
+				String email = sc.nextLine();
 				
-				System.out.println("Enter Address : ");
-				String addr = sc.next();
-				sc.nextLine();
+				System.out.print("Enter Address : ");
+				String addr = sc.nextLine();
+				
 				try {
 					PhoneBook p = new PhoneBook(name, phNo, email, addr);
 					s.add(p);
@@ -141,6 +141,7 @@ public class TestPhoneBook {
 				for (PhoneBook dis:s) {
 					System.out.println(dis);
 				}
+				break;
 			default:
 				loop = false;
 				
